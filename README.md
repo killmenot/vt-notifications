@@ -1,12 +1,13 @@
-<!-- [![](https://img.shields.io/npm/v/vt-notifications.svg?logo=npm&style=flat-square)](https://www.npmjs.com/package/vt-notifications) -->
 
-[![](https://img.shields.io/github/license/sansil/vt-notifications?style=flat-square)](https://github.com/sansil/vt-notifications)
+[![](https://img.shields.io/github/license/killmenot/vue3-vt-notifications?style=flat-square)](https://github.com/killmenot/vue3-vt-notifications)
+[![](https://img.shields.io/npm/dt/vue3-vt-notifications.svg?style=flat-square)](https://www.npmjs.com/package/vue3-vt-notifications)
 
-[![](https://img.shields.io/npm/dt/vt-notifications.svg?style=flat-square)](https://www.npmjs.com/package/vt-notifications)
-
-# vt-notifications
+# vue3-vt-notifications
 
 A headless vue notification library to use with tailwind
+
+ - This is fork and port of Vue 2 [vt-notifications](https://github.com/sansil/vt-notifications) created by [sansil](https://github.com/sansil). Please use this version if you use Vue 2.x
+ - Sponsored by Britton Mathews from Veedback
 
 ## 🌟 Features
 
@@ -16,27 +17,32 @@ A headless vue notification library to use with tailwind
 
 ## 🤖 Demo
 
-[Live demo](https://codesandbox.io/s/vue-tailwind-notifications-i4tgd?file=/src/App.vue)
+[Live demo](https://codesandbox.io/s/vue3-tailwind-notifications-i4tgd?file=/src/App.vue)
 
 ## ⚡️ Installation
 
 ```bash
-yarn add vt-notifications
+yarn add vue3-vt-notifications
 ```
 
 or
 
 ```bash
-npm i vt-notifications
+npm i vue3-vt-notifications
 ```
 
 You can then register Notifications as a Vue plugin.
 
 ```js
-import Vue from "vue";
-import Notifications from "vt-notifications";
+import { createApp } from 'vue'
+import Notifications from 'vue3-vt-notifications'
+import App from './App.vue'
 
-Vue.use(Notifications);
+createApp(App)
+  .use(Notifications)
+  .mount('#app')
+
+
 ```
 
 ## 🍞 How to use
@@ -333,26 +339,26 @@ Scope props:
 
 To get this library working in Nuxt.js you need to prepare a few things.
 
-Create a new plugin in your Nuxt.js project `plugin/vt-notifications.js` and add the following:
+Create a new plugin in your Nuxt.js project `plugin/vue3-vt-notifications.js` and add the following:
 
 ```js
 import Vue from "vue";
-import Notifications from "vt-notifications";
+import Notifications from "vue3-vt-notifications";
 
 Vue.use(Notifications);
 ```
 
-Now you need to add the plugin in your `nuxt.config.js` and add vt-notifications to the transpilation build step.
+Now you need to add the plugin in your `nuxt.config.js` and add vue3-vt-notifications to the transpilation build step.
 
 Add the following lines in your `nuxt.config.js`:
 
 ```js
 plugins: [
-  { src: "~/plugins/vt-notifications" },
+  { src: "~/plugins/vue3-vt-notifications" },
 ],
 build: {
   transpile: [
-    "vt-notifications"
+    "vue3-vt-notifications"
   ],
 }
 ```
