@@ -17,7 +17,7 @@ A headless vue notification library to use with tailwind
 
 ## 🤖 Demo
 
-[Live demo](https://codesandbox.io/s/vue3-tailwind-notifications-i4tgd?file=/src/App.vue)
+[Live demo](https://codesandbox.io/s/vue-tailwind-notifications-forked-i74t0?file=/src/App.vue)
 
 ## ⚡️ Installation
 
