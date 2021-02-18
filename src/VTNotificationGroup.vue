@@ -1,28 +1,26 @@
-
-
 <script>
 export default {
   props: {
     group: {
       type: String,
-      default: "",
+      default: '',
     },
     position: {
       type: String,
-      default: "top",
+      default: 'top',
       validator(value) {
-        return ["top", "bottom"].includes(value);
+        return ['top', 'bottom'].includes(value);
       },
     },
   },
 
   provide() {
     return {
-      ["context"]: { group: this.group, position: this.position },
+      ['context']: { group: this.group, position: this.position },
     };
   },
   render() {
-    return this.$scopedSlots.default({
+    return this.$slots.default({
       group: this.group,
     });
   },

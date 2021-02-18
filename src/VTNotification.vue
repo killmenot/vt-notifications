@@ -1,9 +1,10 @@
 
 <script>
-import { state, methods } from "./notifications.js";
+import { TransitionGroup, h } from 'vue'
+import { state, methods } from './notifications.js';
 export default {
   inject: {
-    context: { default: { group: "", position: "top" } },
+    context: { default: { group: '', position: 'top' } },
   },
   props: {
     maxNotifications: {
@@ -13,39 +14,35 @@ export default {
     transitionGroupClasses: {
       default: () => {
         return {
-          enterActiveClassDelayed:
-            "transform ease-out duration-300 transition delay-300",
-          enterActiveClass: "transform ease-out duration-300 transition",
-          enterClass:
-            "translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-4",
-          enterToClass: "translate-y-0 opacity-100 sm:translate-x-0",
-          leaveActiveClass: "transition ease-in duration-500",
-          leaveClass: "opacity-100",
-          leaveToClass: "opacity-0",
-          moveClass: "transition duration-500",
+          enterActiveClassDelayed: 'transform ease-out duration-300 transition delay-300',
+          enterActiveClass: 'transform ease-out duration-300 transition',
+          enterFromClass: 'translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-4',
+          enterToClass: 'translate-y-0 opacity-100 sm:translate-x-0',
+          leaveActiveClass: 'transition ease-in duration-500',
+          leaveFromClass: 'opacity-100',
+          leaveToClass: 'opacity-0',
+          moveClass: 'transition duration-500',
         };
       },
     },
   },
-  render(createElement) {
-    return createElement(
-      "transition-group",
+  render() {
+    return h(
+      TransitionGroup,
       {
-        attrs: {
-          "enter-active-class":
-            this.notificationsByGroup.length > 1
-              ? this.transitionGroupClasses.enterActiveClassDelayed
-              : this.transitionGroupClasses.enterActiveClass,
-          "enter-class": this.transitionGroupClasses.enterClass,
-          "enter-to-class": this.transitionGroupClasses.enterToClass,
-          "leave-active-class": this.transitionGroupClasses.leaveActiveClass,
-          "leave-class": this.transitionGroupClasses.leaveClass,
-          "leave-to-class": this.transitionGroupClasses.leaveToClass,
-          "move-class": this.transitionGroupClasses.moveClass,
-        },
+        'enter-active-class':
+          this.notificationsByGroup.length > 1
+            ? this.transitionGroupClasses.enterActiveClassDelayed
+            : this.transitionGroupClasses.enterActiveClass,
+        'enter-from-class': this.transitionGroupClasses.enterFromClass,
+        'enter-to-class': this.transitionGroupClasses.enterToClass,
+        'leave-active-class': this.transitionGroupClasses.leaveActiveClass,
+        'leave-from-class': this.transitionGroupClasses.leaveFromClass,
+        'leave-to': this.transitionGroupClasses.leaveToClass,
+        'move-class': this.transitionGroupClasses.moveClass,
       },
       [
-        this.$scopedSlots.default({
+        this.$slots.default({
           notifications: this.sortedNotifications,
           close: this.close,
         }),
@@ -59,7 +56,7 @@ export default {
   },
   computed: {
     sortedNotifications() {
-      if (this.context.position === "bottom")
+      if (this.context.position === 'bottom')
         return [...this.notificationsByGroup].slice(0, this.maxNotifications);
       // if not bottom reverse the array
       return [...this.notificationsByGroup]
@@ -72,7 +69,7 @@ export default {
   },
   methods: {
     close(id) {
-      this.$emit("close");
+      this.$emit('close');
       methods.removeNotification(id);
     },
   },

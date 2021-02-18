@@ -1,7 +1,9 @@
-export const state = {
+import { reactive } from 'vue'
+
+export const state = reactive({
   notifications: [
   ],
-};
+});
 
 let count = 0;
 const generateId = () => {
@@ -11,7 +13,7 @@ const generateId = () => {
 export const methods = {
   notify(notification, timeout) {
     notification.id = generateId()
-    notification.group = notification.group || ""; // add default group
+    notification.group = notification.group || ''; // add default group
     state.notifications.push(notification);
     setTimeout(() => {
       this.removeNotification(notification.id)

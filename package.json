@@ -1,13 +1,25 @@
 {
-  "name": "vt-notifications",
+  "name": "vue3-vt-notifications",
   "description": "A headless vue notification library to use with tailwind",
-  "version": "0.3.1",
-  "author": "sansil",
+  "version": "1.0.0",
   "main": "src/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Alexey Kucherenko",
+    "url": "https://github.com/killmenot"
+  },
+  "homepage": "https://github.com/killmenot/vue3-vt-notifications",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:killmenot/vue3-vt-notifications.git"
+  },
+  "bugs": {
+    "url": "https://github.com/killmenot/vue3-vt-notifications/issues"
+  },
   "scripts": {
+    "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
-  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
     "@vue/cli-plugin-eslint": "^4.5.0",
@@ -20,22 +32,15 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "vue": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sansil/vt-notifications.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sansil/vt-notifications/issues"
+    "vue": "^3.0.0"
   },
   "keywords": [
     "vue",
+    "vue3",
     "vuejs",
     "tailwindcss",
     "tailwindui",
     "notifications",
     "toast"
-  ],
-  "license": "MIT"
+  ]
 }

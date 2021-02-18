@@ -1,15 +1,15 @@
-import VTNotification from "./VTNotification.vue"
-import VTNotificationGroup from "./VTNotificationGroup.vue"
+import VTNotification from './VTNotification.vue'
+import VTNotificationGroup from './VTNotificationGroup.vue'
 import { methods } from './notifications.js'
 
 let installed = false
 
 export default {
-  install(Vue) {
+  install(app) {
     if (installed) return
-    Vue.component('notification', VTNotification)
-    Vue.component('notificationGroup', VTNotificationGroup)
-    Vue.prototype.$notify = (data, timeout) => methods.notify(data, timeout)
+    app.component('notification', VTNotification)
+    app.component('notificationGroup', VTNotificationGroup)
+    app.config.globalProperties.$notify = (data, timeout) => methods.notify(data, timeout)
     installed = true
   }
 }
