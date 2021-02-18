@@ -6,7 +6,7 @@
 
 A headless vue notification library to use with tailwind
 
- - This is fork and port of Vue 2 [vt-notifications](https://github.com/sansil/vt-notifications) created by [sansil](https://github.com/sansil). Please use this version if you use Vue 2.x
+ - This is port of Vue 2 [vt-notifications](https://github.com/sansil/vt-notifications) created by [sansil](https://github.com/sansil). Please use his version if you use Vue 2.x
  - Sponsored by Britton Mathews from Veedback
 
 ## 🌟 Features
