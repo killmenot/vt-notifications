@@ -38,7 +38,7 @@ export default {
         'enter-to-class': this.transitionGroupClasses.enterToClass,
         'leave-active-class': this.transitionGroupClasses.leaveActiveClass,
         'leave-from-class': this.transitionGroupClasses.leaveFromClass,
-        'leave-to': this.transitionGroupClasses.leaveToClass,
+        'leave-to-class': this.transitionGroupClasses.leaveToClass,
         'move-class': this.transitionGroupClasses.moveClass,
       },
       [
