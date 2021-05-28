@@ -41,12 +41,14 @@ export default {
         'leave-to-class': this.transitionGroupClasses.leaveToClass,
         'move-class': this.transitionGroupClasses.moveClass,
       },
-      [
-        this.$slots.default({
-          notifications: this.sortedNotifications,
-          close: this.close,
-        }),
-      ]
+      {
+        default: () => {
+          return this.$slots.default({
+            notifications: this.sortedNotifications,
+            close: this.close,
+          })
+        }
+      }
     );
   },
   data() {
